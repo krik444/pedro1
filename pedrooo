@@ -6,4 +6,8 @@ def main(message):
 @bot.message_handler(commands=['childporn'])
 def main(message):
     bot.send_message(message.chat.id, 'токийский даун')
+@bot.message_handler()
+def info(message):
+    if message.text.lower() == 'мама насти':
+        bot.reply_to(message.chat.id, 'шлюха')
 bot.polling(non_stop=True)
