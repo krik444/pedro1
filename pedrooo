@@ -1,0 +1,9 @@
+import telebot
+bot = telebot.TeleBot('8609434736:AAF9p-GxzKdkJOFGlkdaQBYCWdFHF2PLkRo')
+@bot.message_handler(commands=['start'])
+def main(message):
+    bot.send_message(message.chat.id, 'мы все будем гореть в аду.')
+@bot.message_handler(commands=['childporn'])
+def main(message):
+    bot.send_message(message.chat.id, 'токийский даун')
+bot.polling(non_stop=True)
