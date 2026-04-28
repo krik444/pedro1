@@ -1,13 +1,18 @@
 import telebot
+
 bot = telebot.TeleBot('8609434736:AAF9p-GxzKdkJOFGlkdaQBYCWdFHF2PLkRo')
+
 @bot.message_handler(commands=['start'])
-def main(message):
+def start_cmd(message): 
     bot.send_message(message.chat.id, 'мы все будем гореть в аду.')
+
 @bot.message_handler(commands=['childporn'])
-def main(message):
+def other_cmd(message): 
     bot.send_message(message.chat.id, 'токийский даун')
+
 @bot.message_handler()
 def info(message):
     if message.text.lower() == 'мама насти':
-        bot.reply_to(message.chat.id, 'шлюха')
+        bot.reply_to(message, 'шлюха')
+
 bot.polling(non_stop=True)
