@@ -15,7 +15,7 @@ def info(message):
     if message.text.lower() == 'мама насти':
         bot.reply_to(message, 'шлюха')
 @bot.message_handler(commands=['krichal'])
-def send_image(message):
+def send_gif(message):
     gif = 'https://media1.tenor.com/m/UTCUENvltqEAAAAd/flying-people.gif'
-    bot.send_photo(message.chat.id, gif)
+    bot.send_animation(message.chat.id, gif)
 bot.polling(non_stop=True)
