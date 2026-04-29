@@ -19,4 +19,4 @@ def send_gif(message):
     gif = 'https://media1.tenor.com/m/UTCUENvltqEAAAAd/flying-people.gif'
     bot.send_animation(message.chat.id, gif)
 if __name__ == '__main__':
-bot.polling(non_stop=True)
+    bot.polling(non_stop=True)
