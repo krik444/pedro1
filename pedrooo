@@ -10,13 +10,15 @@ def start_cmd(message):
 def other_cmd(message): 
     bot.send_message(message.chat.id, 'токийский даун')
 
+@bot.message_handler(commands=['krichal'])
+def send_gif(message):
+    gif = 'https://tenor.com'
+    bot.send_animation(message.chat.id, gif)
+
 @bot.message_handler()
 def info(message):
     if message.text.lower() == 'мама насти':
         bot.reply_to(message, 'шлюха')
-@bot.message_handler(commands=['krichal'])
-def send_gif(message):
-    gif = 'https://media1.tenor.com/m/UTCUENvltqEAAAAd/flying-people.gif'
-    bot.send_animation(message.chat.id, gif)
+
 if __name__ == '__main__':
     bot.polling(non_stop=True)
