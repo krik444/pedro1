@@ -2,7 +2,7 @@ import telebot
 import random
 import os
 
-bot = telebot.TeleBot('ТВОЙ_ТОКЕН')
+bot = telebot.TeleBot('8609434736:AAF9p-GxzKdkJOFGlkdaQBYCWdFHF2PLkRo')
 
 FILE_NAME = 'gifs.txt'
 
