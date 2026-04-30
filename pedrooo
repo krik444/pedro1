@@ -12,7 +12,7 @@ def other_cmd(message):
 
 @bot.message_handler(commands=['krichal'])
 def send_gif(message):
-    gif = 'https://tenor.com/b1LZo.gif'
+    gif = 'https://tenor.com/ru/view/flying-people-levitating-field-burberry-gif-27553124'
     bot.send_animation(message.chat.id, gif)
 
 @bot.message_handler()
