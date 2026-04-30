@@ -10,7 +10,23 @@ if os.path.exists(FILE_NAME):
     with open(FILE_NAME, 'r') as f:
         gif_storage = [line.strip() for line in f]
 else:
-    gif_storage = []
+    gif_storage = ['CgACAgIAAyEFAATfVNIqAAPtafN207_GHXYNUoqABX0zGCrddP8AAu-VAAIunDFK5FK0JCEX6w87BA']
+
+@bot.message_handler(commands=['start'])
+def start_cmd(message): 
+    bot.send_message(message.chat.id, 'мы все будем гореть в аду.')
+
+@bot.message_handler(commands=['childporn'])
+def other_cmd(message): 
+    bot.send_message(message.chat.id, 'токийский даун')
+
+@bot.message_handler(commands=['krichal'])
+def send_specific_gif(message):
+    if gif_storage:
+        random_gif = random.choice(gif_storage)
+        bot.send_animation(message.chat.id, random_gif)
+    else:
+        bot.send_message(message.chat.id, 'База пуста')
 
 @bot.message_handler(content_types=['animation'])
 def auto_save_gif(message):
@@ -19,10 +35,13 @@ def auto_save_gif(message):
         gif_storage.append(file_id)
         with open(FILE_NAME, 'a') as f:
             f.write(file_id + '\n')
+        bot.reply_to(message, "Гифка добавлена в ротацию.")
 
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
-    if message.text.lower() == 'мама насти':
+    text = message.text.lower()
+    
+    if text == 'мама насти':
         bot.reply_to(message, 'шлюха')
         return
 
@@ -32,4 +51,5 @@ def handle_text(message):
             bot.send_animation(message.chat.id, random_gif)
 
 if __name__ == '__main__':
+    print("Бот запущен...")
     bot.polling(non_stop=True)
