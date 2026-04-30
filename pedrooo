@@ -44,7 +44,7 @@ def handle_text(message):
         bot.reply_to(message, 'шлюха')
         return
 
-    if random.randint(1, ,6) == 1:
+    if random.randint(1, 6) == 1:
         if gif_storage:
             random_gif = random.choice(gif_storage)
             bot.send_animation(message.chat.id, random_gif)
