@@ -10,9 +10,10 @@ def start_cmd(message):
 def other_cmd(message): 
     bot.send_message(message.chat.id, 'токийский даун')
 
-@bot.message_handler(content_types=['animation'])
-def get_gif_id(message):
-    bot.reply_to(message, f"ID:\n`{message.animation.file_id}`", parse_mode='Markdown')
+@bot.message_handler(commands=['krichal'])
+def send_gif(message):
+    file_id = 'CgACAgIAAyEFAATfVNIqAAPtafN207_GHXYNUoqABX0zGCrddP8AAu-VAAIunDFK5FK0JCEX6w87BA'
+    bot.send_animation(message.chat.id, file_id)
 
 @bot.message_handler()
 def info(message):
