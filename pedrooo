@@ -16,7 +16,7 @@ else:
 def start_cmd(message): 
     bot.send_message(message.chat.id, 'мы все будем гореть в аду.')
 
-@bot.message_handler(commands=['childporn'])
+@bot.message_handler(commands=['tokisky'])
 def other_cmd(message): 
     bot.send_message(message.chat.id, 'токийский даун')
 
